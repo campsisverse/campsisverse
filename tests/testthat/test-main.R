@@ -267,12 +267,12 @@ test_that("Test the renv.lock file dated 261028", {
   # All packages
   raw <- readLines(get_lock_file(version = version, all = TRUE, no_deps = FALSE))
   packages <- campsisverse:::detect_packages(raw)
-  expect_equal(length(packages), 238)
+  expect_equal(length(packages), 237)
 
   # All but private packages (same now since campsistrans is open source)
   raw <- readLines(get_lock_file(version = version, all = FALSE, no_deps = FALSE))
   packages <- campsisverse:::detect_packages(raw)
-  expect_equal(length(packages), 238)
+  expect_equal(length(packages), 237)
 
   # All packages but omit Campsis suite dependencies
   raw <- readLines(get_lock_file(version = version, all = TRUE, no_deps = TRUE))

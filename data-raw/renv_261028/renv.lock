@@ -1324,7 +1324,7 @@
     },
     "campsis": {
       "Package": "campsis",
-      "Version": "1.9.2.9001",
+      "Version": "1.9.3",
       "Source": "GitHub",
       "Type": "Package",
       "Title": "Generic PK/PD Simulation Platform Campsis",
@@ -1332,8 +1332,8 @@
       "Maintainer": "Nicolas Luyckx <nicolas.luyckx@lynxsoft.be>",
       "Description": "A generic, easy-to-use and intuitive pharmacokinetic/pharmacodynamic (PK/PD) simulation platform based on the R packages 'rxode2' and 'mrgsolve'. Campsis provides an abstraction layer over the underlying processes of defining a PK/PD model, assembling a custom dataset and running a simulation. The package has a strong dependency on the R package 'campsismod', which allows models to be read from and written to files, including through a JSON-based interface, and to be adapted further on the fly in the R environment. In addition, 'campsis' allows users to assemble datasets in an intuitive manner, including via a JSON-based interface to import Campsis datasets defined using formal JSON schemas distributed with the package. Once the dataset is ready, the package prepares the simulation, calls 'rxode2' or 'mrgsolve' (at the user's choice), and returns the results for the given model, dataset and desired simulation settings. The package itself is licensed under the GPL (>= 3); the JSON schema files shipped in inst/extdata are licensed separately under the Creative Commons Attribution 4.0 International (CC BY 4.0).",
       "License": "GPL (>= 3)",
-      "URL": "https://github.com/Calvagone/campsis, https://calvagone.github.io/, https://calvagone.github.io/campsis.doc/",
-      "BugReports": "https://github.com/Calvagone/campsis/issues",
+      "URL": "https://github.com/campsisverse/campsis, https://campsisverse.github.io/, https://campsisverse.github.io/campsis.doc/",
+      "BugReports": "https://github.com/campsisverse/campsis/issues",
       "Depends": [
         "campsismod",
         "R (>= 4.1.0)"
@@ -1383,22 +1383,23 @@
       "Author": "Nicolas Luyckx [aut, cre], Calvagone [cph]",
       "RemoteType": "github",
       "RemoteHost": "api.github.com",
-      "RemoteUsername": "Calvagone",
+      "RemoteUsername": "campsisverse",
       "RemoteRepo": "campsis",
-      "RemoteRef": "v1.9.2.9001",
-      "RemoteSha": "1dae472033b9c9bbe5b69035ba081672f76e117e"
+      "RemoteRef": "v1.9.3",
+      "RemoteSha": "a6abd7e014207736a9207ecf5cdb0ee07f7c78d7"
     },
     "campsismisc": {
       "Package": "campsismisc",
-      "Version": "1.0.0",
+      "Version": "1.1.0",
       "Source": "GitHub",
       "Type": "Package",
       "Title": "Miscellaneous Utilities for the Campsis Ecosystem",
-      "Authors@R": "person(\"Nicolas\", \"Luyckx\", , \"nicolas.luyckx@calvagone.com\", role = c(\"aut\", \"cre\"))",
+      "Authors@R": "c( person(\"Nicolas\", \"Luyckx\", email = \"nicolas.luyckx@lynxsoft.be\", role = c(\"aut\", \"cre\")), person(\"Calvagone\", role = \"cph\") )",
+      "Maintainer": "Nicolas Luyckx <nicolas.luyckx@lynxsoft.be>",
       "Description": "A collection of utilities extending the 'campsis' ecosystem, with a primary focus on sensitivity analysis and uncertainty visualization in pharmacometric workflows.  The package provides a framework for performing sensitivity analyses by systematically varying model parameters (e.g., increased and decreased values) and evaluating the resulting impact on model-derived outcomes. It also includes functionality to generate forest plots, enabling clear visualization of parameter uncertainty and its influence on key metrics.  These tools integrate seamlessly with 'campsis', 'campsismod' and 'campsisnca', supporting efficient simulation, analysis and interpretation workflows.",
       "License": "GPL (>= 3)",
-      "URL": "https://github.com/Calvagone/campsismisc",
-      "BugReports": "https://github.com/Calvagone/campsismisc/issues",
+      "URL": "https://github.com/campsisverse/campsismisc",
+      "BugReports": "https://github.com/campsisverse/campsismisc/issues",
       "Depends": [
         "campsismod",
         "R (>= 4.1.0)"
@@ -1410,11 +1411,12 @@
         "dplyr",
         "ggplot2",
         "ggrepel",
-        "lifecycle",
+        "jsonlite",
+        "jsonvalidate",
+        "methods",
         "progressr",
         "purrr",
         "rlang",
-        "tibble",
         "tidyr"
       ],
       "Suggests": [
@@ -1426,27 +1428,25 @@
         "roxygen2",
         "rxode2",
         "testthat",
+        "tibble",
         "tictoc"
       ],
-      "VignetteBuilder": "knitr",
       "Encoding": "UTF-8",
       "Language": "en-US",
       "LazyData": "true",
-      "Collate": "'check.R' 'utilities.R' 'generic.R' 'labeled_covariate.R' 'labeled_covariates.R' 'labeled_parameters.R' 'oat_analysis_output.R' 'oat_analysis_outputs.R' 'oat_analysis_result.R' 'oat_analysis_results.R' 'oat_analysis.R' 'forest_plot_item.R' 'forest_plot_items.R' 'forest_plot.R' 'sensitivity_analysis_change.R' 'sensitivity_analysis_changes.R' 'sensitivity_analysis_item.R' 'sensitivity_analysis_items.R' 'sensitivity_analysis.R' 'deprecated_methods.R'",
-      "Config/roxygen2/version": "8.0.0",
-      "Author": "Nicolas Luyckx [aut, cre]",
-      "Maintainer": "Nicolas Luyckx <nicolas.luyckx@calvagone.com>",
+      "Collate": "'campsismisc-package.R' 'check.R' 'utilities.R' 'json_interface.R' 'generic.R' 'oat_analysis.R' 'forest_plot_item.R' 'forest_plot_items.R' 'forest_plot.R' 'sensitivity_analysis_change.R' 'sensitivity_analysis_changes.R' 'sensitivity_analysis_item.R' 'sensitivity_analysis_items.R' 'sensitivity_analysis.R'",
+      "Config/roxygen2/version": "8.1.1",
+      "Author": "Nicolas Luyckx [aut, cre], Calvagone [cph]",
       "RemoteType": "github",
-      "Remotes": "Calvagone/campsisnca@main",
       "RemoteHost": "api.github.com",
-      "RemoteUsername": "Calvagone",
+      "RemoteUsername": "campsisverse",
       "RemoteRepo": "campsismisc",
-      "RemoteRef": "v1.0.0",
-      "RemoteSha": "3465b904731e842db761e5425ee7ef6a59e78754"
+      "RemoteRef": "v1.1.0",
+      "RemoteSha": "88e0b90b9b67b697a7f473a307000edf0e11100c"
     },
     "campsismod": {
       "Package": "campsismod",
-      "Version": "1.4.2",
+      "Version": "1.5.0",
       "Source": "GitHub",
       "Type": "Package",
       "Title": "Generic Implementation of a PK/PD Model",
@@ -1454,8 +1454,8 @@
       "Maintainer": "Nicolas Luyckx <nicolas.luyckx@lynxsoft.be>",
       "Description": "A generic, easy-to-use and expandable implementation of a pharmacokinetic (PK) / pharmacodynamic (PD) model based on the S4 class system. This package allows the user to read and write pharmacometric models from and to files, including a JSON-based interface to import Campsis models defined using a formal JSON schema distributed with the package. Models can be adapted further on the fly in the R environment using an intuitive API to add, modify or delete equations, ordinary differential equations (ODEs), model parameters or compartment properties (such as infusion duration or rate, bioavailability and initial values). The package also provides export facilities for use with the simulation packages 'rxode2' and 'mrgsolve'. The package itself is licensed under the GPL (>= 3); the JSON schema file shipped in inst/extdata is licensed separately under the Creative Commons Attribution 4.0 International (CC BY 4.0).  This package is designed and intended to be used with the package 'campsis', a PK/PD simulation platform built on top of 'rxode2' and 'mrgsolve'.",
       "License": "GPL (>= 3)",
-      "URL": "https://github.com/Calvagone/campsismod, https://calvagone.github.io/, https://calvagone.github.io/campsismod.doc/",
-      "BugReports": "https://github.com/Calvagone/campsismod/issues",
+      "URL": "https://github.com/campsisverse/campsismod, https://campsisverse.github.io/, https://campsisverse.github.io/campsismod.doc/",
+      "BugReports": "https://github.com/campsisverse/campsismod/issues",
       "Depends": [
         "R (>= 4.0.0)"
       ],
@@ -1490,19 +1490,19 @@
       "Encoding": "UTF-8",
       "Language": "en-US",
       "LazyData": "true",
-      "Collate": "'global.R' 'data.R' 'utilities.R' 'special_operators.R' 'check.R' 'json_element.R' 'generic.R' 'generic_element_list.R' 'generic_element_position.R' 'generic_list.R' 'pattern.R' 'model_statement.R' 'model_statements.R' 'model_unknown_statement.R' 'model_comment.R' 'model_line_break.R' 'model_equation.R' 'model_ode.R' 'model_if_statement.R' 'compartment.R' 'compartment_property.R' 'compartment_properties.R' 'compartment_bioavailability.R' 'compartment_lag_time.R' 'compartment_infusion_duration.R' 'compartment_infusion_rate.R' 'compartment_initial_condition.R' 'compartments.R' 'parameter.R' 'parameters.R' 'code_record.R' 'code_records.R' 'model_parser.R' 'campsis_model.R' 'omega_block.R' 'omega_blocks.R' 'parameter_uncertainty_utils.R' 'replication_settings.R' 'replicated_campsis_model.R' 'model_add_suffix.R' 'rxode_model.R' 'rxode_conversion.R' 'mrgsolve_model.R' 'mrgsolve_conversion.R' 'json_interface.R' 'deprecated_methods.R'",
-      "Config/roxygen2/version": "8.1.0",
+      "Collate": "'global.R' 'data.R' 'utilities.R' 'special_operators.R' 'check.R' 'json_element.R' 'generic.R' 'generic_element_list.R' 'generic_element_position.R' 'generic_list.R' 'pattern.R' 'model_statement.R' 'model_statements.R' 'model_unknown_statement.R' 'model_comment.R' 'model_line_break.R' 'model_equation.R' 'model_ode.R' 'model_if_statement.R' 'compartment.R' 'compartment_property.R' 'compartment_properties.R' 'compartment_bioavailability.R' 'compartment_lag_time.R' 'compartment_infusion_duration.R' 'compartment_infusion_rate.R' 'compartment_initial_condition.R' 'compartments.R' 'parameter.R' 'parameters.R' 'covariate_definition.R' 'covariate_definitions.R' 'code_record.R' 'code_records.R' 'model_parser.R' 'campsis_model.R' 'omega_block.R' 'omega_blocks.R' 'parameter_uncertainty_utils.R' 'replication_settings.R' 'replicated_campsis_model.R' 'model_add_suffix.R' 'rxode_model.R' 'rxode_conversion.R' 'mrgsolve_model.R' 'mrgsolve_conversion.R' 'json_interface.R' 'deprecated_methods.R'",
+      "Config/roxygen2/version": "8.1.1",
       "Author": "Nicolas Luyckx [aut, cre], Calvagone [cph]",
       "RemoteType": "github",
       "RemoteHost": "api.github.com",
-      "RemoteUsername": "Calvagone",
+      "RemoteUsername": "campsisverse",
       "RemoteRepo": "campsismod",
-      "RemoteRef": "v1.4.2",
-      "RemoteSha": "9868639344da2fb29f0f805e9b9fd846c203ca85"
+      "RemoteRef": "v1.5.0",
+      "RemoteSha": "a5185de8dc9845cf170f382a43c8d869fd19bd7b"
     },
     "campsisnca": {
       "Package": "campsisnca",
-      "Version": "1.7.2",
+      "Version": "1.7.3",
       "Source": "GitHub",
       "Type": "Package",
       "Title": "Non-Compartmental Analysis for Campsis Simulation Platform",
@@ -1510,8 +1510,8 @@
       "Maintainer": "Nicolas Luyckx <nicolas.luyckx@lynxsoft.be>",
       "Description": "A flexible and user-friendly non-compartmental analysis (NCA) toolkit designed to work seamlessly with simulated pharmacokinetic data generated using the 'campsis' ecosystem. The package provides a comprehensive framework to compute standard and custom NCA metrics, including exposure (AUC), peak/trough concentrations, half-life and time-above/below thresholds, with support for configurable time windows and summary statistics. 'campsisnca' integrates tightly with 'campsis' and 'campsismod', enabling streamlined workflows from simulation to analysis. In addition, the package provides a JSON-based interface to define NCA analyses, metrics and options using formal schemas, allowing analyses to be created, validated and executed outside of R and facilitating reproducibility, automation and system integration. The package also includes utilities for generating formatted summary tables and exporting results in multiple formats suitable for reporting. Trapezoidal rule implementation for AUC calculation is based on the 'qpNCA' package by Huisman, Jolling, Mehta and Bergsma (2021) <doi:10.32614/CRAN.package.qpNCA>, following methodology from Rowland and Tozer (2011, ISBN:978-0-683-07404-8). The package itself is licensed under the GPL (>= 3); the JSON schema files shipped in inst/extdata are licensed separately under the Creative Commons Attribution 4.0 International (CC BY 4.0).",
       "License": "GPL (>= 3)",
-      "URL": "https://github.com/Calvagone/campsisnca",
-      "BugReports": "https://github.com/Calvagone/campsisnca/issues",
+      "URL": "https://github.com/campsisverse/campsisnca",
+      "BugReports": "https://github.com/campsisverse/campsisnca/issues",
       "Depends": [
         "campsismod",
         "R (>= 4.0.0)"
@@ -1553,10 +1553,10 @@
       "Author": "Nicolas Luyckx [aut, cre], Calvagone [cph]",
       "RemoteType": "github",
       "RemoteHost": "api.github.com",
-      "RemoteUsername": "Calvagone",
+      "RemoteUsername": "campsisverse",
       "RemoteRepo": "campsisnca",
-      "RemoteRef": "v1.7.2",
-      "RemoteSha": "84c9b0c38bda020fe4a677be9b9945b12c41f33b"
+      "RemoteRef": "v1.7.3",
+      "RemoteSha": "ec1f5f249b39df8a1567f3daecdf93ff0b00a8f4"
     },
     "campsisqual": {
       "Package": "campsisqual",
