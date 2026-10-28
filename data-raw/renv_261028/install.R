@@ -1,18 +1,18 @@
 Sys.setenv(GITHUB_PAT = "")
 
-repos <- "https://packagemanager.posit.co/cran/2026-08-06"
+repos <- "https://CRAN.R-project.org/"
 options(repos = c(CRAN = repos))
 
 # Install tests by default
 options(INSTALL_opts = "--install-tests")
 
 pkgs <- c(
-  "Calvagone/campsismod@v1.4.2",
-  "Calvagone/campsis@v1.9.2.9001",
-  "Calvagone/campsisnca@v1.7.2",
-  "Calvagone/campsismisc@v1.0.0",
-  "Calvagone/campsisqual@v1.5.1",
-  "Calvagone/campsistrans@v1.5.0",
+  "campsisverse/campsismod@v1.5.0",
+  "campsisverse/campsis@v1.9.3",
+  "campsisverse/campsisnca@v1.7.3",
+  "campsisverse/campsismisc@v1.1.0",
+  "campsisverse/campsisqual@v1.5.1",
+  "campsisverse/campsistrans@v1.5.0",
   "mrgsolve",
   "rxode2",
   "xgxr", # e-Campsis (R version)
