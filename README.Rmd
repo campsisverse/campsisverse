@@ -11,18 +11,18 @@ The official R package manager of the Campsis suite.
 Install the Campsisverse package with the following command:
 
 ```{r eval=FALSE}
-remotes::install_github("Calvagone/campsisverse")
+remotes::install_github("campsisverse/campsisverse")
 ```
 
 ## Install the Campsis suite
 
 The Campsis suite comprises 5 open-source packages that are available on GitHub/CRAN: 
 
-- [Campsismod](https://github.com/Calvagone/campsismod)
-- [Campsis](https://github.com/Calvagone/campsis)
-- [Campsisnca](https://github.com/Calvagone/campsisnca)
-- [Campsismisc](https://github.com/Calvagone/campsismisc)
-- [Campsisqual](https://github.com/Calvagone/campsisqual)
+- [Campsismod](https://github.com/campsisverse/campsismod)
+- [Campsis](https://github.com/campsisverse/campsis)
+- [Campsisnca](https://github.com/campsisverse/campsisnca)
+- [Campsismisc](https://github.com/campsisverse/campsismisc)
+- [Campsisqual](https://github.com/campsisverse/campsisqual)
 
 The Campsisverse package allows you to install the Campsis suite with a single command:
 
@@ -36,14 +36,14 @@ The `install` method is quick and easy, but it may not be suitable for all users
 
 ## Restoring specific versions of the Campsis suite
 
-Specific versions of the Campsis suite can be restored thanks to the `use` or `restore` functions. These 2 functions have a `version` argument, which can be used to restore the Campsis suite (i.e. the Campsis packages + all dependencies) with specific package versions. This importantly ensures the reproducibility of your simulation scripts over time. The underlying mechanism is based on the `renv.lock` file, which is a snapshot of the Campsis suite at a specific date. All snapshots created in campsisverse are tested extensively with our [qualification suite](https://github.com/Calvagone/campsisqual).
+Specific versions of the Campsis suite can be restored thanks to the `use` or `restore` functions. These 2 functions have a `version` argument, which can be used to restore the Campsis suite (i.e. the Campsis packages + all dependencies) with specific package versions. This importantly ensures the reproducibility of your simulation scripts over time. The underlying mechanism is based on the `renv.lock` file, which is a snapshot of the Campsis suite at a specific date. All snapshots created in campsisverse are tested extensively with our [qualification suite](https://github.com/campsisverse/campsisqual).
 
 ### Using the 'use' function (sandbox environment)
 
 The Campsis suite can be run in a sandbox environment using the `use` function. This function is useful when you want to run the Campsis suite in a temporary environment without affecting your current R distribution. 
 
 ```{r eval=FALSE}
-campsisverse::use(version="26-08-06")
+campsisverse::use(version="26-10-28")
 ```
 
 By executing this command, the whole Campsis suite is installed in a temporary R environment based on the `renv.lock` file for the specified date, i.e., the latest Campsis snapshot available at the time of writing. Thanks to this file, packages are restored with the exact versions specified in the snapshot and your Campsis script should run without any issues.
@@ -53,7 +53,7 @@ By executing this command, the whole Campsis suite is installed in a temporary R
 Restoring the Campsis suite into your current R distribution is easy. Just run the following command:
 
 ```{r eval=FALSE}
-campsisverse::restore(version="26-08-06")
+campsisverse::restore(version="26-10-28")
 ```
 
 In interactive mode, and if you don't want to activate a renv project, click 2 ('Do not activate the project and use the current library paths). In this case, the whole Campsis suite is restored into your R distribution based on the package versions specified in the `renv.lock` file for the specified date. Note that some of your previous packages may be downgraded or upgraded during the restoration process.
@@ -61,10 +61,10 @@ In interactive mode, and if you don't want to activate a renv project, click 2 (
 In case you do not want to install the Campsis dependencies (e.g. `rxode2`, `mrgsolve`, `dplyr`, `ggplot`, etc.) with specific versions, use the `no_deps` argument. When `no_deps` is TRUE, only the Campsis packages are installed with the versions specified in the lock file.
 
 ```{r eval=FALSE}
-campsisverse::restore(version="26-08-06", no_deps=TRUE)
+campsisverse::restore(version="26-10-28", no_deps=TRUE)
 ```
 
-Please be aware that setting `no_deps` to TRUE may cause unexpected behavior of some Campsis packages. In any case, we recommend using our qualification package to validate the correct functioning of Campsis. Please visit the [Campsisqual repository](https://github.com/Calvagone/campsisqual) for more information.
+Please be aware that setting `no_deps` to TRUE may cause unexpected behavior of some Campsis packages. In any case, we recommend using our qualification package to validate the correct functioning of Campsis. Please visit the [Campsisqual repository](https://github.com/campsisverse/campsisqual) for more information.
 
 ### Using the 'restore' function within your renv project
 
@@ -77,8 +77,8 @@ renv::init(bare=TRUE)
 Then, restore the Campsis suite into your project as follows:
 
 ```{r eval=FALSE}
-renv::install("Calvagone/campsisverse")
-campsisverse::restore(version="26-08-06")
+renv::install("campsisverse/campsisverse")
+campsisverse::restore(version="26-10-28")
 ```
 
 The Campsis packages can then be loaded to run your simulation scripts. Use the renv commands as usual to manage your project and dependencies.

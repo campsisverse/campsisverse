@@ -8,7 +8,7 @@ The official R package manager of the Campsis suite.
 Install the Campsisverse package with the following command:
 
 ``` r
-remotes::install_github("Calvagone/campsisverse")
+remotes::install_github("campsisverse/campsisverse")
 ```
 
 ## Install the Campsis suite
@@ -16,11 +16,11 @@ remotes::install_github("Calvagone/campsisverse")
 The Campsis suite comprises 5 open-source packages that are available on
 GitHub/CRAN:
 
-- [Campsismod](https://github.com/Calvagone/campsismod)
-- [Campsis](https://github.com/Calvagone/campsis)
-- [Campsisnca](https://github.com/Calvagone/campsisnca)
-- [Campsismisc](https://github.com/Calvagone/campsismisc)
-- [Campsisqual](https://github.com/Calvagone/campsisqual)
+- [Campsismod](https://github.com/campsisverse/campsismod)
+- [Campsis](https://github.com/campsisverse/campsis)
+- [Campsisnca](https://github.com/campsisverse/campsisnca)
+- [Campsismisc](https://github.com/campsisverse/campsismisc)
+- [Campsisqual](https://github.com/campsisverse/campsisqual)
 
 The Campsisverse package allows you to install the Campsis suite with a
 single command:
@@ -49,7 +49,7 @@ This importantly ensures the reproducibility of your simulation scripts
 over time. The underlying mechanism is based on the `renv.lock` file,
 which is a snapshot of the Campsis suite at a specific date. All
 snapshots created in campsisverse are tested extensively with our
-[qualification suite](https://github.com/Calvagone/campsisqual).
+[qualification suite](https://github.com/campsisverse/campsisqual).
 
 ### Using the ‘use’ function (sandbox environment)
 
@@ -59,7 +59,7 @@ in a temporary environment without affecting your current R
 distribution.
 
 ``` r
-campsisverse::use(version="26-08-06")
+campsisverse::use(version="26-10-28")
 ```
 
 By executing this command, the whole Campsis suite is installed in a
@@ -75,7 +75,7 @@ Restoring the Campsis suite into your current R distribution is easy.
 Just run the following command:
 
 ``` r
-campsisverse::restore(version="26-08-06")
+campsisverse::restore(version="26-10-28")
 ```
 
 In interactive mode, and if you don’t want to activate a renv project,
@@ -92,14 +92,14 @@ Campsis packages are installed with the versions specified in the lock
 file.
 
 ``` r
-campsisverse::restore(version="26-08-06", no_deps=TRUE)
+campsisverse::restore(version="26-10-28", no_deps=TRUE)
 ```
 
 Please be aware that setting `no_deps` to TRUE may cause unexpected
 behavior of some Campsis packages. In any case, we recommend using our
 qualification package to validate the correct functioning of Campsis.
 Please visit the [Campsisqual
-repository](https://github.com/Calvagone/campsisqual) for more
+repository](https://github.com/campsisverse/campsisqual) for more
 information.
 
 ### Using the ‘restore’ function within your renv project
@@ -114,8 +114,8 @@ renv::init(bare=TRUE)
 Then, restore the Campsis suite into your project as follows:
 
 ``` r
-renv::install("Calvagone/campsisverse")
-campsisverse::restore(version="26-08-06")
+renv::install("campsisverse/campsisverse")
+campsisverse::restore(version="26-10-28")
 ```
 
 The Campsis packages can then be loaded to run your simulation scripts.
